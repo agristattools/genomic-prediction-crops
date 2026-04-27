@@ -1,0 +1,15 @@
+crop_genomic_env/
+venv/
+env/
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+models_saved/*
+!models_saved/.gitkeep
+outputs/*
+!outputs/.gitkeep
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store

@@ -1,0 +1,44 @@
+project:
+  name: "Genomic Prediction for Crop Breeding"
+  version: "1.0.0"
+  description: "Multi-modal G×E genomic prediction system"
+
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+
+genomic:
+  maf_threshold: 0.05
+  ld_threshold: 0.8
+  ld_window: 50
+  min_call_rate: 0.9
+
+features:
+  n_pca_components: 10
+  use_grm: true
+  environmental_vars:
+    - "gdd"
+    - "precipitation"
+    - "humidity"
+    - "temp_max"
+    - "temp_min"
+
+models:
+  random_seed: 42
+  test_size: 0.2
+  cv_folds: 5
+
+training:
+  train_years_start: 2015
+  train_years_end: 2020
+  test_years_start: 2021
+  test_years_end: 2022
+  batch_size: 32
+  epochs: 100
+  early_stopping_patience: 15
+  learning_rate: 0.001
+
+paths:
+  models_saved: "models_saved/"
+  outputs: "outputs/"
+  reports: "reports/"
